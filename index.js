@@ -8,8 +8,6 @@ const port=process.env.PORT || 3000;
 app.use(cors())
 app.use(express.json()) 
 
-
-
 const uri = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@cluster0.n2wd0zs.mongodb.net/?retryWrites=true&w=majority`;
 
 // Create a MongoClient with a MongoClientOptions object to set the Stable API version
@@ -41,7 +39,7 @@ async function run() {
 
         const options = {
             
-            // _id automatic asbe, title & price ta cai tai, bakigula jemon description img-url agula ke cai na
+            // _id automatic asbe, title & price ta cai tai, bakigula jemon description img-url agula ke cai na, eta khub important
             projection: {title: 1, price: 1 },
           };
 
@@ -66,6 +64,3 @@ app.get('/',(req,res)=>{
 app.listen(port,()=>{
     console.log(`doctor is running on port: ${port}`);
 })
-
-//
-//
